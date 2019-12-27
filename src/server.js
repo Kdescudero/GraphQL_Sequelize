@@ -1,8 +1,9 @@
 import { ApolloServer, makeExecutableSchema } from "apollo-server";
+import models from "./models";
 
 const typeDefs = `
    type Hola{
-      message:String!
+      message:String!  
    }
 
    type Query{
@@ -24,11 +25,16 @@ const schema = makeExecutableSchema({
 });
 
 const apollo = new ApolloServer({
-  schema
+  schema,
+  context: {
+    models
+  }
 });
 
 const port = process.env.PORT || "4000";
 
-apollo.listen(port).then(({ url }) => {
-  console.log(`Server run in port ${url}`);
+models.sequelize.sync({ force: true }).then(() => {
+  apollo.listen(port).then(({ url }) => {
+    console.log(`Server run in port ${url}`);
+  });
 });

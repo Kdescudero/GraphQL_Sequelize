@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon ./src/index.js -e js --exec babel-node"
+        "start": "nodemon ./src/server.js -e js --exec babel-node"
     },
     "keywords": [],
     "author": "",
@@ -21,6 +21,7 @@
         "graphql": "^14.5.8",
         "pg": "^7.15.2",
         "pg-hstore": "^2.3.3",
-        "sequelize": "^5.21.3"
+        "sequelize": "^5.21.3",
+        "uuid": "^3.3.3"
     }
 }
