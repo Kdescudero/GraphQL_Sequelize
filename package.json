@@ -1,0 +1,26 @@
+{
+    "name": "api_graphql",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon ./src/index.js -e js --exec babel-node"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/node": "^7.7.7",
+        "@babel/preset-env": "^7.7.7",
+        "nodemon": "^2.0.2"
+    },
+    "dependencies": {
+        "apollo-server": "^2.9.14",
+        "graphql": "^14.5.8",
+        "pg": "^7.15.2",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^5.21.3"
+    }
+}
