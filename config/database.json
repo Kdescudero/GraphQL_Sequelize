@@ -1,15 +1,15 @@
 {
-    "development":{
-        "username"  :   "postgres",
-        "password"  :   "1234",
-        "database"  :   "api_graphql_dev",
-        "host"      :   "localhost",
-        "dialect"   :   "postgres"
+    "development": {
+        "username": "postgres",
+        "password": "postgres",
+        "database": "api_graphql_dev",
+        "host": "localhost",
+        "dialect": "postgres"
     },
-    "production"    :   {
+    "production": {
 
     },
-    "test"  :   {
-        
+    "test": {
+
     }
 }

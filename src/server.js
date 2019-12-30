@@ -1,23 +1,7 @@
 import { ApolloServer, makeExecutableSchema } from "apollo-server";
 import models from "./models";
-
-const typeDefs = `
-   type Hola{
-      message:String!  
-   }
-
-   type Query{
-      hola(name:String!):Hola!
-   }
-`;
-
-const resolvers = {
-  Query: {
-    hola: (_, { name }) => {
-      return { message: `Hola ${name}` };
-    }
-  }
-};
+import resolvers from "./resolvers";
+import typeDefs from "./types";
 
 const schema = makeExecutableSchema({
   typeDefs,
@@ -31,7 +15,7 @@ const apollo = new ApolloServer({
   }
 });
 
-const port = process.env.PORT || "4000";
+const port = process.env.PORT || "3001";
 
 models.sequelize.sync({ force: true }).then(() => {
   apollo.listen(port).then(({ url }) => {

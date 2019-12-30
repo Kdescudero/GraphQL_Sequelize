@@ -1,25 +1,61 @@
-const sequelize = require("sequelize")
-const uuid      = require("uuid")
+// import { DataTypes } from "sequelize/types"
 
-function createModel(connection){
-    const Model = connection.define(
-        "preferense",
-        {
-            id_T                : {
-                type            : sequelize.STRING,
-                allowNull       : false,
-                primaryKey      : true,
-                defaultValue    : () => { return uuid }
-            },
+// const sequelize = require("sequelize")
+// const uuid      = require("uuid")
 
-            description     : {
-                type        : sequelize.STRING,
-                allowNull   : false
-            }
+// function createModel(connection){
+//     const Model = connection.define(
+//         "typePreference",
+//         {
+//             id_T                : {
+//                 type            : sequelize.STRING,
+//                 allowNull       : false,
+//                 primaryKey      : true,
+//                 defaultValue    : () => { return uuid }
+//             },
+
+//             description     : {
+//                 type        : sequelize.STRING,
+//                 allowNull   : false
+//             }
+//         }
+//     )
+
+//     Model.associate = models => {
+//         Model.hasMany(models.preference,{
+//             foreignKey:{
+//                 name:'id_P',
+//                 field:'id_P'
+//             },
+//             as:'preference',
+//             onDelete:'CASCADE',
+//             onUpdate:'CASCADE'
+//         })
+//     }
+
+//     return Model
+// }
+
+
+export default (sequelize, DataTypes) => {
+    const TypePreference = sequelize.define("TypePreference", {
+        description     : {
+            type        : DataTypes.STRING,
+            allowNull   : false
         }
-    )
+    })
 
-    return Model
+    TypePreference.associate = models => {
+        TypePreference.hasMany(models.preference,{
+            foreignKey:{
+                name:'id_TP',
+                field:'id_TP'
+            },
+            as:'preference',
+            onDelete:'CASCADE',
+            onUpdate:'CASCADE'
+        })
+    }
+
+    return TypePreference
 }
-
-module.exports = createModel
