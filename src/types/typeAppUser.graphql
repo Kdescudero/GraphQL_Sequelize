@@ -1,0 +1,16 @@
+type AppUser {
+    id: ID!
+    email: String!
+    password: String!
+    isEnabled: Boolean!
+    avatar: String!
+    phone_number: String!
+}
+
+type Query {
+    allAppUser: [AppUser!]
+}
+
+type Mutation { 
+    newAppUser( email: String!, password: String!, isEnabled: Boolean! ,avatar: String!, phone_number: String!): AppUser!
+}

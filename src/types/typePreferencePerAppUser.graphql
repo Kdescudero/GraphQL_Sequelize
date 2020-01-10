@@ -1,0 +1,18 @@
+type PreferencePerAppUser {
+  id: ID!
+  id_preference: Int!
+  id_appUser: Int!
+  perference: [Preference]
+}
+
+type Query {
+    allPreferencePerAppUser: [PreferencePerAppUser!]
+}
+
+type Mutation {
+    newPreferencePerAppUser(id_appUser: Int! id_preference: [PreferencesInput]!): [PreferencePerAppUser]
+}
+
+input PreferencesInput {
+    id_preference: Int!
+}
