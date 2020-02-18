@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon ./src/server.js -e js, graphql --exec babel-node"
+        "start": "nodemon ./src/server.js -e js, graphql, json --exec babel-node"
     },
     "keywords": [],
     "author": "",
@@ -14,15 +14,30 @@
         "@babel/core": "^7.7.7",
         "@babel/node": "^7.7.7",
         "@babel/preset-env": "^7.7.7",
+        "prettier": "^1.18.2",
+        "cross-env": "^5.2.0",
+        "eslint": "^6.1.0",
+        "eslint-config-airbnb-base": "13.2.0",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-prettier": "^3.1.0",
         "nodemon": "^2.0.2"
     },
     "dependencies": {
         "apollo-server": "^2.9.14",
+        "apollo-server-express": "^2.9.12",
+        "apollo-server-lambda": "^2.7.0",
         "graphql": "^14.5.8",
         "merge-graphql-schemas": "^1.7.4",
+        "express-graphql": "^0.9.0",
+        "graphql-iso-date": "^3.6.1",
+        "graphql-tools-type-uuid": "^2.0.1",
         "pg": "^7.15.2",
         "pg-hstore": "^2.3.3",
         "sequelize": "^5.21.3",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.0.0",
         "uuid": "^3.3.3"
     }
 }

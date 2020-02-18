@@ -2,7 +2,7 @@
     "development": {
         "username": "postgres",
         "password": "postgres",
-        "database": "api_graphql_dev",
+        "database": "bikeRegister",
         "host": "localhost",
         "dialect": "postgres"
     },
